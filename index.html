@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f4eb">
+    <title>MEME DECK — Internet soundboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Meme Deck home">
+          <span class="brand-mark" aria-hidden="true">M!</span>
+          <span class="brand-name">MEME<span>DECK</span></span>
+        </a>
+        <div class="topbar-center"><span class="live-dot"></span> THE INTERNET'S NOISE MACHINE</div>
+        <div class="volume-control" aria-label="Master volume">
+          <span class="volume-icon" aria-hidden="true">◖</span>
+          <input id="volume" type="range" min="0" max="100" value="72" aria-label="Volume">
+          <span id="volume-value">72%</span>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="sidebar" aria-label="Sound categories">
+          <div class="side-label">YOUR DECK</div>
+          <nav id="categories" class="category-list"></nav>
+          <div class="side-note">
+            <span class="note-spark" aria-hidden="true">✳</span>
+            <p>Headphones on.<br>Context off.</p>
+            <span class="note-stamp">EST. ONLINE</span>
+          </div>
+        </aside>
+
+        <section class="sound-area" aria-label="Meme soundboard">
+          <div class="board-heading">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-line"></span> POCKET-SIZED CHAOS</div>
+              <h1>Make some <span>noise.</span></h1>
+              <p class="subheading">Your favorite sounds, one very satisfying click away.</p>
+            </div>
+            <div class="heading-sticker" aria-hidden="true"><span>INSTANT<br>REACTION</span><b>↘</b></div>
+          </div>
+
+          <div class="toolbar">
+            <div class="result-count"><strong id="sound-count">0</strong> SOUNDS <span class="count-divider">/</span> <span id="category-title">EVERYTHING</span></div>
+            <label class="search-box">
+              <span aria-hidden="true">⌕</span>
+              <input id="search" type="search" placeholder="Find a sound..." autocomplete="off">
+              <kbd>/</kbd>
+            </label>
+          </div>
+
+          <div id="sound-grid" class="sound-grid" aria-live="polite"></div>
+          <div id="empty-state" class="empty-state" hidden>No sounds found. Try another search.</div>
+        </section>
+      </main>
+
+      <footer class="now-playing" aria-live="polite">
+        <div class="playing-indicator" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="playing-copy"><span class="playing-label">NOW MAKING A SCENE</span><strong id="now-playing">Nothing yet. The silence is suspicious.</strong></div>
+        <div class="playing-key"><kbd id="last-key">SPACE</kbd><span>TO PLAY / PAUSE</span></div>
+        <button id="stop-button" class="stop-button" type="button" aria-label="Stop sound" title="Stop sound (Escape)">■</button>
+      </footer>
+    </div>
+  </body>
+</html>
