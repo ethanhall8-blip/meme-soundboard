@@ -164,7 +164,7 @@ function playEffect(effect) {
 
 function stopSounds() {
   playToken++;
-  speechSynthesis.cancel();
+  if ('speechSynthesis' in window) speechSynthesis.cancel();
   currentSourceNodes.forEach(source => { try { source.stop(); } catch {} });
   currentSourceNodes = [];
   if (activeButton) activeButton.classList.remove('playing');
